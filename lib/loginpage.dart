@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'homepage.dart';
+import 'dashboard.dart';
+import 'scannerpage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -35,8 +36,9 @@ class _LoginPageState extends State<LoginPage> {
         textColor: Colors.white,
         fontSize: 16,
       );
-      Navigator.push(context,MaterialPageRoute(builder: (context) => HomePage()));
-    } else {
+      Navigator.push(context,MaterialPageRoute(builder: (context) => DashboardPage()));
+    }
+    else {
       Fluttertoast.showToast(
         msg: "Username/Password Incorrect!",
         toastLength: Toast.LENGTH_SHORT,
@@ -123,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                     login(user.text, pass.text);
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.purple.shade300,
+                      backgroundColor: Color(0xFF68A7AD),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
                   ),
                   child: const Text('Login',
